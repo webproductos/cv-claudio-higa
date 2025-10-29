@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CV Interactivo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-avatar">CH</div>
+      </div>
+      <nav class="sidebar-menu">
+        <button class="menu-item active" data-section="section1"><i class="fa fa-user"></i><span>SOBRE MI</span></button>
+        <button class="menu-item" data-section="section2"><i class="fa fa-briefcase"></i><span>TRABAJOS</span></button>
+        <button class="menu-item" data-section="section3"><i class="fa fa-graduation-cap"></i><span>ESTUDIOS</span></button>
+        <button class="menu-item" data-section="section4"><i class="fa fa-chart-simple"></i><span>CURSOS</span></button>
+        <button class="menu-item" data-section="section5"><i class="fa fa-folder-open"></i><span>HABILIDADES</span></button>
+        <button class="menu-item" data-section="section6"><i class="fa fa-globe"></i><span>IDIOMAS</span></button>
+        <button class="menu-item" data-section="section7"><i class="fa fa-envelope"></i><span>CONTACTO</span></button>
+      </nav>
+    </aside>
+
+    <main class="main-area">
+      <section class="photo-panel">
+        <img src="D:\Users\Usuario\desktop\proyecto2\FOTOCLAU.png" alt="Tu foto" class="profile-photo"/>
+      </section>
+      <section class="detail-panel">
+        <div id="section1" class="detail-section visible"><h2>Sobre mi</h2><p>Soy Claudio Higa, profesional técnico con más de 15 años de experiencia en la industria de la telefonía celular, especializado en mantenimiento, testing y reparación de equipos electrónicos.</p><p>He formado parte de empresas multinacionales como Samsung Electronics Argentina, BGH y Solnik, colaborando con partners estratégicos como Mirgor, Frávega, Garbarino y Brightstar S.A.</p>
+
+Actualmente me desempeño como Supervisor del área de Instrumental, Testing y Reparación, liderando la operatividad y mantenimiento de maquinarias en las líneas de producción de celulares Xiaomi.</p>
+
+En Samsung Electronics me desempeñé en diversas áreas técnicas, incluyendo reparación de placas electrónicas, auditoría de calidad y validación de materiales RMA, además de integrar el equipo de New Product Introduction (NPI) como nexo técnico entre ingeniería, calidad y partners industriales durante los lanzamientos de nuevos modelos.</p><p>
+Busco aportar mi experiencia técnica e industrial a la industria hidrocarburífera, aplicando mis conocimientos en procesos, control de calidad y mejora continua, mientras continúo capacitándome para desarrollarme profesionalmente en este nuevo sector.</p><p>Resido en Río Grande, Tierra del Fuego desde 2011. Durante mi período de vacaciones en diciembre de 2025, viajaré a Neuquén con el objetivo de iniciar mi desarrollo profesional en la industria hidrocarburífera, con la firme intención de establecerme en la región.</p></div>
+        <div id="section2" class="detail-section"><h2>SOLNIK</h2><p>Actualmente me desempeño como Supervisor del área de Instrumental, Testing y Reparación. Nuestra labor diaria consiste en mantener operativas todas las máquinas que se encuentran en el proceso productivo en líneas de Celulares Xiaomi.</p></div>
+        <div id="section3" class="detail-section"><h2>POLITÉCNICO MALVINAS</h2><p>Actualmente me encuentro cursando el primer año de la Tecnicatura de Ciencia de Datos e Inteligencia artificial de manera virtual con encuentros sincrónicos brindada por el politécnico Malvinas de la ciudad de Rio Grande. </p><p><h2>INSTITUTO TECNOLÓGICO LABORAL MENDOZA (ITM)</h2>También estoy realizando un curso en el ITM sobre Instrumentación Petrolera</p><p>Y el año que viene voy a comenzar a cursar la Tecnicatura en Petróleo dictado por el Instituto Argentino de Petróleo y Gas. Una carrera 100% online</p></div>
+        <div id="section4" class="detail-section"><h2>CURSOS</h2><p>Instalaciones eléctricas domiciliarias (CPET)</p><p>Curso de Neumática (CPET)</p><p>Soldadura eléctrica y Mig Mag (CPET)<P> Construcción en Seco "Steel Framing" (CPET)</p><p>Curso de Electrónica (Instituto Argentino de Televisión)</p><p>Programación en Python (Gobierno de la ciudad de Bs As)</p><p>Argentina programa (Ruby, Javascript, C#)</p></div>
+        
+        <div id="section5" class="detail-section"><h2>HABILIDADES</h2><p>EXCEL</p><p>WORD</p><p>POWERPOINT</p><p>POWER BI</p><p>PYTHON</p><p>SQL</p><p>COREL DRAW</p><p>IMPRESIÓN 3D</p><p>CHATGPT (IA)</p><p>HTML</p><p>VISUAL STUDIO CODE</p></div>
+        <div id="section6" class="detail-section"><h2>IDIOMAS</h2><p>Inglés intermedio</p></div>
+        <div id="section7" class="detail-section"><h2>CONTACTO</h2><p>Celular/Whatsapp: 
+    <a href="https://wa.me/5491122741460" target="_blank" style="color: #25D366; text-decoration: underline;">
+  +54 9 11 2274 1460
+</a></p><p>Email: higaclaudioalejandro@gmail.com</p></div>     
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const menuItems = document.querySelectorAll('.menu-item');
+    const sections = document.querySelectorAll('.detail-section');
+    menuItems.forEach(btn => {
+      btn.addEventListener('click', () => {
+        menuItems.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const target = btn.dataset.section;
+        sections.forEach(sec => sec.classList.toggle('visible', sec.id === target));
+      });
+    });
+  </script>
+</body>
+</html>
