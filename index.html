@@ -1,100 +1,349 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CV Interactivo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="app-shell">
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <div class="sidebar-avatar">CH</div>
-      </div>
-      <nav class="sidebar-menu">
-        <button class="menu-item active" data-section="section1"><i class="fa fa-user"></i><span>SOBRE MI</span></button>
-        <button class="menu-item" data-section="section2"><i class="fa fa-briefcase"></i><span>TRABAJOS</span></button>
-        <button class="menu-item" data-section="section3"><i class="fa fa-chart-line"></i><span>MEJORA CONTINUA</span></button>
-        <button class="menu-item" data-section="section4"><i class="fa fa-graduation-cap"></i><span>ESTUDIOS</span></button>
-        <button class="menu-item" data-section="section5"><i class="fa fa-chart-simple"></i><span>CURSOS</span></button>
-        <button class="menu-item" data-section="section6"><i class="fa fa-folder-open"></i><span>HABILIDADES</span></button>
-        <button class="menu-item" data-section="section7"><i class="fa fa-globe"></i><span>IDIOMAS</span></button>
-        <button class="menu-item" data-section="section8"><i class="fa fa-envelope"></i><span>CONTACTO</span></button>
-        
-      </nav>
-    </aside>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CV Interactivo</title>
 
-    <main class="main-area">
-      <section class="photo-panel">
-        <img src="FOTOCLAU.png" alt="Tu foto" class="profile-photo"/>
-      </section>
-      <section class="detail-panel">
-        <div id="section1" class="detail-section visible"><h2>Sobre mi</h2><p>Soy Claudio Higa, profesional técnico con más de 15 años de experiencia en la industria de la telefonía celular, especializado en mantenimiento, testing y reparación de equipos electrónicos.</p><p>He formado parte de empresas multinacionales como Samsung Electronics Argentina, BGH y Solnik, colaborando con partners estratégicos como Mirgor, Frávega, Garbarino y Brightstar S.A.</p>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-Actualmente me desempeño como Supervisor del área de Instrumental, Testing y Reparación, liderando la operatividad y mantenimiento de maquinarias en las líneas de producción de celulares Xiaomi.</p>
+  <body>
+    <div class="app-shell">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-avatar">CH</div>
+        </div>
 
-En Samsung Electronics me desempeñé en diversas áreas técnicas, incluyendo reparación de placas electrónicas, auditoría de calidad y validación de materiales RMA, además de integrar el equipo de New Product Introduction (NPI) como nexo técnico entre ingeniería, calidad y partners industriales durante los lanzamientos de nuevos modelos.</p>Siempre enfocado en el cumplimiento de los KPI (Indicadores Clave de Desempeño) establecidos por la empresa.<p>
-Busco aportar mi experiencia técnica e industrial a la industria hidrocarburífera, aplicando mis conocimientos en procesos, control de calidad y mejora continua, mientras continúo capacitándome para desarrollarme profesionalmente en este nuevo sector.</p><p>Resido en Río Grande, Tierra del Fuego desde 2011. Durante mi período de vacaciones en diciembre de 2025, viajaré a Neuquén con el objetivo de iniciar mi desarrollo profesional en la industria hidrocarburífera, con la firme intención de establecerme en la región.</p></div>
-        <div id="section2" class="detail-section"><h2>SOLNIK</h2><p>Actualmente me desempeño como Supervisor del área de Instrumental, Testing y Reparación. Nuestra labor diaria consiste en mantener operativas todas las máquinas que se encuentran en el proceso productivo en líneas de Celulares Xiaomi.</p></div>
-        <div id="section3" class="detail-section"><h2>MEJORA CONTINUA</h2>
-          <p><strong>Estandarización en Registro de fallas</strong><br>
-            
-          
-      
-          <p>Se identificó que el registro de reparaciones carecía de estandarización: cada técnico escribía observaciones de forma libre, lo que dificultaba la trazabilidad de fallas, la obtención de métricas y generaba pérdida de tiempo en consultas entre sectores.</p><p> Como mejora, se desarrolló un sistema en Excel con listas desplegables basado en una base de datos de fallas clasificadas por puesto (por ejemplo: Altavoz faltante | Puesto generador de falla: 8). Al escribir las primeras letras, el sistema sugiere automáticamente las opciones coincidentes, permitiendo seleccionar, copiar y pegar la falla estandarizada en el campo de observaciones del sistema principal.</p> 
-          <h3 style="color:#8a4dff;">Resultados:</h3>
-<ul style="list-style-type: disc; color: #f1f1f5; margin-left: 20px;">
-  <li>Estandarización completa del registro de fallas sin modificar el sistema original (Requiere desarrollo externo).</li>
-  <li>Reducción del tiempo de tipado y carga de información.</li>
-  <li>Mejora en la calidad y consistencia de los datos.</li>
-  <li>Respuesta más rápida y proactiva ante fallas reiteradas, permitiendo acciones correctivas inmediatas.</li>
-  <li>Generación automática de KPI por tipo de falla y puesto de trabajo (Power BI).</li>
-  <li>Optimización del flujo de comunicación entre reparación, procesos, producción y control de calidad.</li></ul><strong>Aplicación de Reparación</strong><br><p>Se identificó que el análisis de fallas dependía de equipos de testeo ubicados en línea de producción, lo que generaba conflictos operativos, demoras y pérdida de productividad, ya que los técnicos debían desplazarse y ocupar recursos de línea para confirmar fallas.<p>Como solución, se desarrolló una aplicación propia en C# con interfaz Windows Forms, integrada al teléfono Android mediante comandos ADB, que permite ejecutar pruebas funcionales desde una botonera y visualizar en tiempo real los resultados en pantalla.</p>
+        <nav class="sidebar-menu">
+          <button class="menu-item active" data-section="section1">
+            <i class="fa fa-user"></i><span>SOBRE MI</span>
+          </button>
+          <button class="menu-item" data-section="section2">
+            <i class="fa fa-briefcase"></i><span>TRABAJOS</span>
+          </button>
+          <button class="menu-item" data-section="section3">
+            <i class="fa fa-chart-line"></i><span>MEJORA CONTINUA</span>
+          </button>
+          <button class="menu-item" data-section="section4">
+            <i class="fa fa-graduation-cap"></i><span>ESTUDIOS</span>
+          </button>
+          <button class="menu-item" data-section="section5">
+            <i class="fa fa-chart-simple"></i><span>CURSOS</span>
+          </button>
+          <button class="menu-item" data-section="section6">
+            <i class="fa fa-folder-open"></i><span>HABILIDADES</span>
+          </button>
+          <button class="menu-item" data-section="section7">
+            <i class="fa fa-globe"></i><span>IDIOMAS</span>
+          </button>
+          <button class="menu-item" data-section="section8">
+            <i class="fa fa-envelope"></i><span>CONTACTO</span>
+          </button>
+        </nav>
+      </aside>
 
-Resultados:
+      <!-- Main -->
+      <main class="main-area">
+        <!-- Foto fija -->
+        <section class="photo-panel">
+          <img src="FOTOCLAU.png" alt="Tu foto" class="profile-photo" />
+        </section>
 
-<ul style="list-style-type: disc; color: #f1f1f5; margin-left: 20px;">
-  <li>Eliminación de análisis incorrectos y reducción significativa de tiempos de reparación.</li>
-  <li>Eliminación del desplazamiento de técnicos hacia los equipos de testeo de línea.</li>
-  <li>Mayor robustez y trazabilidad en los análisis de fallas.</li>
-  <li>Reducción de scrap derivado de diagnósticos erróneos.</li>
-  <li>Mejora en la autonomía del área de reparación y en la eficiencia global del proceso.</li>
-</ul>
-</div>
-        <div id="section4" class="detail-section"><h2>POLITÉCNICO MALVINAS</h2><p>Actualmente me encuentro cursando el primer año de la Tecnicatura de Ciencia de Datos e Inteligencia artificial de manera virtual con encuentros sincrónicos brindada por el politécnico Malvinas de la ciudad de Rio Grande. </p><p><h2>INSTITUTO TECNOLÓGICO LABORAL MENDOZA (ITM)</h2>También estoy realizando un curso en el ITM sobre Instrumentación Petrolera</p><p>Y el año que viene voy a comenzar a cursar la Tecnicatura en Petróleo dictado por el Instituto Argentino de Petróleo y Gas. Una carrera 100% online</p></div>
-        <div id="section5" class="detail-section"><h2>CURSOS</h2><p><strong>Curso de Electricidad Domiciliaria</strong><br>
-Capacitación teórico-práctica orientada a instalaciones eléctricas en viviendas de hasta 60 m². Aprendizaje en lectura de planos, elaboración de planillas y tablas de carga, aplicación de la Ley de Ohm y cálculo de potencia, corriente y resistencia. Manejo de instrumentos de medición (amperímetro y voltímetro) y componentes eléctricos como interruptores termomagnéticos, disyuntores diferenciales y tableros principales. Formación en puesta a tierra, elementos de protección y normas de seguridad eléctrica según reglamentación vigente.</p>
-</p><p><strong>Curso de Neumática Básica</strong><br>
-          Capacitación en cálculo de parámetros neumáticos (fuerza, distancia, trabajo, presión, humedad y en el funcionamiento de válvulas NC y NA.) Conversión de magnitudes y sistemas de unidades</p>
-</p><p><strong>Curso de Herrería</strong><br>Capacitación en soldadura eléctrica con equipos Inverter y Mig Mag, priorizando el correcto uso de Equipos de Protección Personal (EPP) y la manipulación responsable de herramientas eléctricas y manuales (amoladora, sierra sensitiva, arco de sierra, lima)</p><p><strong>Curso de Construcción en Seco “Steel Framing” (CPET)</strong><br>
-Capacitación en sistemas de perfilería galvanizada, armado de tabiques y cielorrasos, aislamiento térmico y acústico, y aplicación de normas de seguridad. Conocimientos en cálculo estructural básico y lectura de planos constructivos.</p>
-<p>Curso de Electrónica (Instituto Argentino de Televisión)</p><p>Programación en Python (Gobierno de la ciudad de Bs As)</p><p>Argentina programa (Ruby, Javascript, C#)</p></div>
- 
-        <div id="section6" class="detail-section"><h2>HABILIDADES</h2><p>EXCEL</p><p>WORD</p><p>POWERPOINT</p><p>POWER BI</p><p>PYTHON</p><p>SQL</p><p>COREL DRAW</p><p>IMPRESIÓN 3D</p><p>CHATGPT (IA)</p><p>HTML</p><p>VISUAL STUDIO CODE</p></div>
-        <div id="section7" class="detail-section"><h2>IDIOMAS</h2><p>Inglés intermedio</p></div>
-        <div id="section8" class="detail-section"><h2>CONTACTO</h2><p>Celular/Whatsapp: 
-    <a href="https://wa.me/5491122741460" target="_blank" style="color: #25D366; text-decoration: underline;">
-  +54 9 11 2274 1460
-</a></p><p>Email: higaclaudioalejandro@gmail.com</p></div>
-        
-      </section>
-    </main>
-  </div>
+        <!-- Detalle -->
+        <section class="detail-panel">
+          <!-- SOBRE MI -->
+          <div id="section1" class="detail-section visible">
+            <h2>Sobre mi</h2>
 
-  <script>
-    const menuItems = document.querySelectorAll('.menu-item');
-    const sections = document.querySelectorAll('.detail-section');
-    menuItems.forEach(btn => {
-      btn.addEventListener('click', () => {
-        menuItems.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const target = btn.dataset.section;
-        sections.forEach(sec => sec.classList.toggle('visible', sec.id === target));
+            <p>
+              Soy Claudio Higa, profesional técnico con más de 15 años de
+              experiencia en la industria de la telefonía celular, especializado
+              en mantenimiento, testing y reparación de equipos electrónicos.
+            </p>
+
+            <p>
+              He formado parte de empresas multinacionales como Samsung
+              Electronics Argentina, BGH y Solnik, colaborando con partners
+              estratégicos como Mirgor, Frávega, Garbarino y Brightstar S.A.
+            </p>
+
+            <p>
+              Actualmente me desempeño como Supervisor del área de Instrumental,
+              Testing y Reparación, liderando la operatividad y mantenimiento de
+              maquinarias en las líneas de producción de celulares Xiaomi.
+            </p>
+
+            <p>
+              En Samsung Electronics me desempeñé en diversas áreas técnicas,
+              incluyendo reparación de placas electrónicas, auditoría de calidad
+              y validación de materiales RMA, además de integrar el equipo de
+              New Product Introduction (NPI) como nexo técnico entre ingeniería,
+              calidad y partners industriales durante los lanzamientos de nuevos
+              modelos. Siempre enfocado en el cumplimiento de los KPI
+              (Indicadores Clave de Desempeño) establecidos por la empresa.
+            </p>
+
+            <p>
+              Busco aportar mi experiencia técnica e industrial a la industria
+              hidrocarburífera, aplicando mis conocimientos en procesos, control
+              de calidad y mejora continua, mientras continúo capacitándome para
+              desarrollarme profesionalmente en este nuevo sector.
+            </p>
+
+            <p>
+              Resido en Río Grande, Tierra del Fuego desde 2011. Durante mi
+              período de vacaciones en diciembre de 2025, viajaré a Neuquén con
+              el objetivo de iniciar mi desarrollo profesional en la industria
+              hidrocarburífera, con la firme intención de establecerme en la
+              región.
+            </p>
+          </div>
+
+          <!-- TRABAJOS -->
+          <div id="section2" class="detail-section">
+            <h2>SOLNIK</h2>
+            <p>
+              Actualmente me desempeño como Supervisor del área de Instrumental,
+              Testing y Reparación. Nuestra labor diaria consiste en mantener
+              operativas todas las máquinas que se encuentran en el proceso
+              productivo en líneas de Celulares Xiaomi.
+            </p>
+          </div>
+
+          <!-- MEJORA CONTINUA -->
+          <div id="section3" class="detail-section">
+            <h2>MEJORA CONTINUA</h2>
+
+            <p><strong>Estandarización en Registro de fallas</strong></p>
+
+            <p>
+              Se identificó que el registro de reparaciones carecía de
+              estandarización: cada técnico escribía observaciones de forma
+              libre, lo que dificultaba la trazabilidad de fallas, la obtención
+              de métricas y generaba pérdida de tiempo en consultas entre
+              sectores.
+            </p>
+
+            <p>
+              Como mejora, se desarrolló un sistema en Excel con listas
+              desplegables basado en una base de datos de fallas clasificadas
+              por puesto (por ejemplo: Altavoz faltante | Puesto generador de
+              falla: 8). Al escribir las primeras letras, el sistema sugiere
+              automáticamente las opciones coincidentes, permitiendo seleccionar,
+              copiar y pegar la falla estandarizada en el campo de observaciones
+              del sistema principal.
+            </p>
+
+            <h3 style="color:#8a4dff;">Resultados:</h3>
+            <ul style="list-style-type: disc; color: #f1f1f5; margin-left: 20px;">
+              <li>
+                Estandarización completa del registro de fallas sin modificar el
+                sistema original (Requiere desarrollo externo).
+              </li>
+              <li>Reducción del tiempo de tipado y carga de información.</li>
+              <li>Mejora en la calidad y consistencia de los datos.</li>
+              <li>
+                Respuesta más rápida y proactiva ante fallas reiteradas,
+                permitiendo acciones correctivas inmediatas.
+              </li>
+              <li>
+                Generación automática de KPI por tipo de falla y puesto de
+                trabajo (Power BI).
+              </li>
+              <li>
+                Optimización del flujo de comunicación entre reparación,
+                procesos, producción y control de calidad.
+              </li>
+            </ul>
+
+            <!-- Imagen pequeña tras "Resultados" -->
+            <img
+              src="powerbi.PNG"
+              alt="Ilustración de resultados de estandarización"
+              class="mini-img"
+            />
+
+            <p><strong>Aplicación de Reparación</strong></p>
+
+            <p>
+              Se identificó que el análisis de fallas dependía de equipos de
+              testeo ubicados en línea de producción, lo que generaba conflictos
+              operativos, demoras y pérdida de productividad, ya que los técnicos
+              debían desplazarse y ocupar recursos de línea para confirmar
+              fallas.
+            </p>
+
+            <p>
+              Como solución, se desarrolló una aplicación propia en C# con
+              interfaz Windows Forms, integrada al teléfono Android mediante
+              comandos ADB, que permite ejecutar pruebas funcionales desde una
+              botonera y visualizar en tiempo real los resultados en pantalla.
+            </p>
+
+            <h3>Resultados:</h3>
+            <ul style="list-style-type: disc; color: #f1f1f5; margin-left: 20px;">
+              <li>
+                Eliminación de análisis incorrectos y reducción significativa de
+                tiempos de reparación.
+              </li>
+              <li>
+                Eliminación del desplazamiento de técnicos hacia los equipos de
+                testeo de línea.
+              </li>
+              <li>Mayor robustez y trazabilidad en los análisis de fallas.</li>
+              <li>Reducción de scrap derivado de diagnósticos erróneos.</li>
+              <li>
+                Mejora en la autonomía del área de reparación y en la eficiencia
+                global del proceso.
+              </li>
+            </ul>
+
+            <!-- Imagen pequeña tras "Resultados" -->
+            <img
+              src="REPAAPP.PNG"
+              alt="Aplicación de reparación - ejemplo"
+              class="mini-img"
+            />
+          </div>
+
+          <!-- ESTUDIOS -->
+          <div id="section4" class="detail-section">
+            <h2>POLITÉCNICO MALVINAS</h2>
+            <p>
+              Actualmente me encuentro cursando el primer año de la Tecnicatura
+              de Ciencia de Datos e Inteligencia artificial de manera virtual
+              con encuentros sincrónicos brindada por el Politécnico Malvinas de
+              la ciudad de Río Grande.
+            </p>
+
+            <h2>INSTITUTO TECNOLÓGICO LABORAL MENDOZA (ITM)</h2>
+            <p>
+              También estoy realizando un curso en el ITM sobre Instrumentación
+              Petrolera.
+            </p>
+
+            <p>
+              Y el año que viene voy a comenzar a cursar la Tecnicatura en
+              Petróleo dictada por el Instituto Argentino de Petróleo y Gas. Una
+              carrera 100% online.
+            </p>
+          </div>
+
+          <!-- CURSOS -->
+          <div id="section5" class="detail-section">
+            <h2>CURSOS</h2>
+
+            <p><strong>Curso de Electricidad Domiciliaria</strong></p>
+            <p>
+              Capacitación teórico-práctica orientada a instalaciones eléctricas
+              en viviendas de hasta 60 m². Aprendizaje en lectura de planos,
+              elaboración de planillas y tablas de carga, aplicación de la Ley
+              de Ohm y cálculo de potencia, corriente y resistencia. Manejo de
+              instrumentos de medición (amperímetro y voltímetro) y componentes
+              eléctricos como interruptores termomagnéticos, disyuntores
+              diferenciales y tableros principales. Formación en puesta a
+              tierra, elementos de protección y normas de seguridad eléctrica
+              según reglamentación vigente.
+            </p>
+
+            <p><strong>Curso de Neumática Básica</strong></p>
+            <p>
+              Capacitación en cálculo de parámetros neumáticos (fuerza,
+              distancia, trabajo, presión, humedad y en el funcionamiento de
+              válvulas NC y NA). Conversión de magnitudes y sistemas de
+              unidades.
+            </p>
+
+            <p><strong>Curso de Herrería</strong></p>
+            <p>
+              Capacitación en soldadura eléctrica con equipos Inverter y Mig
+              Mag, priorizando el correcto uso de Equipos de Protección Personal
+              (EPP) y la manipulación responsable de herramientas eléctricas y
+              manuales (amoladora, sierra sensitiva, arco de sierra, lima).
+            </p>
+
+            <p>
+              <strong>Curso de Construcción en Seco “Steel Framing” (CPET)</strong>
+            </p>
+            <p>
+              Capacitación en sistemas de perfilería galvanizada, armado de
+              tabiques y cielorrasos, aislamiento térmico y acústico, y
+              aplicación de normas de seguridad. Conocimientos en cálculo
+              estructural básico y lectura de planos constructivos.
+            </p>
+
+            <p>Curso de Electrónica (Instituto Argentino de Televisión)</p>
+            <p>Programación en Python (Gobierno de la ciudad de Bs As)</p>
+            <p>Argentina programa (Ruby, Javascript, C#)</p>
+          </div>
+
+          <!-- HABILIDADES -->
+          <div id="section6" class="detail-section">
+            <h2>HABILIDADES</h2>
+            <p>EXCEL</p>
+            <p>WORD</p>
+            <p>POWERPOINT</p>
+            <p>POWER BI</p>
+            <p>PYTHON</p>
+            <p>SQL</p>
+            <p>COREL DRAW</p>
+            <p>IMPRESIÓN 3D</p>
+            <p>CHATGPT (IA)</p>
+            <p>HTML</p>
+            <p>VISUAL STUDIO CODE</p>
+          </div>
+
+          <!-- IDIOMAS -->
+          <div id="section7" class="detail-section">
+            <h2>IDIOMAS</h2>
+            <p>Inglés intermedio</p>
+          </div>
+
+          <!-- CONTACTO -->
+          <div id="section8" class="detail-section">
+            <h2>CONTACTO</h2>
+
+            <p>
+              Celular/Whatsapp:
+              <a
+                href="https://wa.me/5491122741460"
+                target="_blank"
+                style="color: #25D366; text-decoration: underline;"
+                >+54 9 11 2274 1460</a
+              >
+            </p>
+
+            <p>Email: higaclaudioalejandro@gmail.com</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const menuItems = document.querySelectorAll(".menu-item");
+      const sections = document.querySelectorAll(".detail-section");
+
+      menuItems.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          menuItems.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          const target = btn.dataset.section;
+          sections.forEach((sec) =>
+            sec.classList.toggle("visible", sec.id === target)
+          );
+        });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

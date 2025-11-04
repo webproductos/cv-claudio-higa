@@ -22,6 +22,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 1rem .75rem;
+  
 }
 
 .sidebar-header {
@@ -107,10 +108,10 @@ body {
   border-radius: 1rem;
   border: 1px solid #2f2f3a;
   padding: 2rem;
-  overflow-y: auto;       /* Activa la barra vertical */
-  max-height: 85vh;       /* Define la altura máxima visible */
-  scrollbar-width: thin;  /* Scroll más fino (para Firefox) */
-  scrollbar-color: #8a4dff #1a1a22; /* Colores del scroll */
+  overflow-y: auto;
+  height: 85vh; /* mismo alto que las demás columnas */
+  scrollbar-width: thin;
+  scrollbar-color: #8a4dff #1a1a22;
 }
 
 .detail-section {
@@ -124,3 +125,28 @@ body {
 h2 {
   color: #8a4dff;
 }
+.mini-img {
+  display: block;
+  margin: 25px auto 45px auto;  /* centrada con espacio arriba y abajo */
+  width: 100%;                   /* ocupa el 95% del ancho de la columna */
+  max-width: 600px;             /* límite para pantallas grandes */
+  height: auto;                 /* mantiene proporciones originales */
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease;
+}
+
+.mini-img:hover {
+  transform: scale(1.10);
+}
+
+/* Versión para celulares */
+@media (max-width: 768px) {
+  .mini-img {
+    width: 85%;          /* ocupa más espacio en pantallas chicas */
+    max-width: 350px;
+    margin: 20px auto 35px;
+  }
+}
+
+
