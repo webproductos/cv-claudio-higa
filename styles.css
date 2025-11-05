@@ -89,7 +89,7 @@ body {
 .photo-panel {
   display: flex;
   justify-content: center;
-  align-items: top; /* center*/
+  align-items: flex-start; 
   background: #1a1a22;
   border-radius: 1rem;
   border: 1px solid #2f2f3a;
@@ -141,9 +141,46 @@ h2 {
 }
 
 /* Versión para celulares */
+/* Versión para celulares */
 @media (max-width: 768px) {
+  .app-shell {
+    grid-template-columns: 1fr; /* sidebar arriba */
+  }
+
+  .main-area {
+    grid-template-columns: 1fr; /* foto y detalle en columna */
+  }
+
+  .sidebar {
+    flex-direction: row;
+    overflow-x: auto;   /* deslizable horizontal */
+    gap: .5rem;
+    padding: .5rem;
+  }
+
+  .sidebar-menu {
+    flex-direction: row;
+    gap: .5rem;
+    width: auto;
+  }
+
+  .menu-item {
+    min-width: 80px;
+    min-height: 60px;
+    font-size: .65rem;
+  }
+
+  .photo-panel {
+    justify-content: center;
+  }
+
+  .profile-photo {
+    width: 200px;
+    height: 240px;
+  }
+
   .mini-img {
-    width: 85%;          /* ocupa más espacio en pantallas chicas */
+    width: 85%;
     max-width: 350px;
     margin: 20px auto 35px;
   }
