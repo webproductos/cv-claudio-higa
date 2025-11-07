@@ -2,8 +2,9 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>CV Interactivo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Claudio Higa</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
@@ -19,12 +20,20 @@
   <body>
     <div class="app-shell">
       <!-- Sidebar -->
-      <aside class="sidebar">
-        <div class="sidebar-header">
+      <aside class="sidebar"><div class="sidebar-header">
           <div class="sidebar-avatar">CH</div>
+      <div class="scroll-indicator left" aria-hidden="true">
+        <i class="fa fa-chevron-left"></i>
+      </div>
+      <div class="scroll-indicator right" aria-hidden="true">
+        <i class="fa fa-chevron-right"></i>
+      </div>
+
         </div>
 
-        <nav class="sidebar-menu">
+         <!-- Contenedor deslizable + indicadores -->
+      <div class="sidebar-scroller" role="region" aria-label="Menú deslizable">
+        <!-- Indicadores de desplazamiento (solo móviles) --><nav class="sidebar-menu">
           <button class="menu-item active" data-section="section1">
             <i class="fa fa-user"></i><span>SOBRE MI</span>
           </button>
@@ -50,13 +59,14 @@
             <i class="fa fa-envelope"></i><span>CONTACTO</span>
           </button>
         </nav>
+      </div>  
       </aside>
 
       <!-- Main -->
       <main class="main-area">
         <!-- Foto fija -->
         <section class="photo-panel">
-          <img src="FOTOCLAU.PNG" alt="Tu foto" class="profile-photo" />
+          <img src="fotoclau.PNG" alt="Tu foto" class="profile-photo" />
         </section>
 
         <!-- Detalle -->
@@ -345,5 +355,35 @@
         });
       });
     </script>
-  </body>
+  
+    <script>
+      // --- Indicadores de scroll en el sidebar (móvil) ---
+      const sidebar  = document.querySelector('.sidebar');
+      const scroller = document.querySelector('.sidebar-scroller');
+
+      function updateScrollHints() {
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        if (!isMobile || !sidebar || !scroller) {
+          sidebar?.classList.remove('show-left','show-right');
+          return;
+        }
+        const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+        if (maxScroll <= 0) {
+          sidebar.classList.remove('show-left','show-right');
+          return;
+        }
+        const x = scroller.scrollLeft, tol = 8;
+        if (x > tol) sidebar.classList.add('show-left'); else sidebar.classList.remove('show-left');
+        if (x < maxScroll - tol) sidebar.classList.add('show-right'); else sidebar.classList.remove('show-right');
+      }
+
+      scroller?.addEventListener('scroll', updateScrollHints, { passive: true });
+      window.addEventListener('resize', updateScrollHints);
+      window.addEventListener('orientationchange', updateScrollHints);
+
+      // primer cálculo
+      updateScrollHints();
+    </script>
+    
+</body>
 </html>

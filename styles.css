@@ -141,7 +141,7 @@ h2 {
 }
 
 /* Versión para celulares */
-/* Versión para celulares */
+
 @media (max-width: 768px) {
   .app-shell {
     grid-template-columns: 1fr; /* sidebar arriba */
@@ -184,6 +184,106 @@ h2 {
     max-width: 350px;
     margin: 20px auto 35px;
   }
+  /* Scroller horizontal en móvil */
+.sidebar { position: relative; }
+.sidebar-scroller { position: relative; }
+@media (max-width: 768px) {
+  .sidebar-menu { display: inline-flex; gap: .5rem; padding: .25rem .5rem; }
+  .menu-item { white-space: nowrap; }
+  .sidebar.show-left  .scroll-indicator.left  { opacity: 1; }
+  .sidebar.show-right .scroll-indicator.right { opacity: 1; }
+}
+.scroll-indicator {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  padding: .35rem .45rem; border-radius: .6rem;
+  background: rgba(15,15,20,.55); backdrop-filter: blur(2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  opacity: 0; pointer-events: none; transition: opacity .2s ease;
+}
+.scroll-indicator.left  { left: 4px; }
+.scroll-indicator.right { right: 4px; }
+.scroll-indicator i { font-size: .9rem; color: #fff; }
+
 }
 
 
+
+
+/* ====== FIX: Sidebar scroller & indicators (mobile) ====== */
+.sidebar { position: relative; }
+.sidebar-scroller { position: relative; }
+
+.scroll-indicator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: .35rem .45rem;
+  border-radius: .6rem;
+  background: rgba(15,15,20,.55);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+  z-index: 2;
+}
+.scroll-indicator.left  { left: 4px; }
+.scroll-indicator.right { right: 4px; }
+.scroll-indicator i { font-size: .9rem; color: #fff; }
+
+@media (max-width: 768px) {
+  /* El scroller es el que debe desplazar horizontalmente */
+  .sidebar-scroller {
+    overflow-x: auto;
+    overflow-y: hidden;
+    }
+
+  /* El menú se vuelve horizontal y mide su ancho real para habilitar el overflow */
+  .sidebar-menu {
+    display: inline-flex;
+    gap: .5rem;
+    padding: .25rem .5rem;
+    width: max-content;
+  }
+  .menu-item { white-space: nowrap; }
+
+  /* Fades laterales en el scroller (no en el contenedor padre) */
+  .sidebar-scroller::before,
+  .sidebar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 22px;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(-90deg, rgba(15,15,20,1), rgba(15,15,20,0));
+}
+  .sidebar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 22px;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(15,15,20,1), rgba(15,15,20,0));
+}
+  .sidebar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 22px;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(-90deg, rgba(15,15,20,1), rgba(15,15,20,0));
+}
+
+  /* Mostrar flechas cuando corresponda */
+  .sidebar.show-left  .scroll-indicator.left  { opacity: 1; }
+  .sidebar.show-right .scroll-indicator.right { opacity: 1; }
+}
