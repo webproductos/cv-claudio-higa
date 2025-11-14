@@ -151,7 +151,7 @@ body {
 .detail-section { display: none; }
 .detail-section.visible { display: block; }
 
-h2 { color: #38bdf8; }  /*#8a4dff */
+h2 { color: #ffffff; }  /*#8a4dff lila #ffffff blanco #38bdf8  azul petroleo*/
 h3 { color: #00B8F0; }
 
 .mini-img {
