@@ -253,7 +253,7 @@ h3 { color: #00B8F0; }
   color: #ffffff;              /* Color del texto blanco*/
   font-size: 1.2rem;           /* Tamaño del texto */
   text-decoration: underline;  /* Subrayado */
-  text-decoration-color: #00aaff;
+  text-decoration-color: #ffffff;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
 }
