@@ -260,7 +260,7 @@ h3 { color: #00B8F0; }
   /* Color de links y efecto hover */
 a {
   color: #38bdf8;
-  text-decoration: none;
+  text-decoration: underline;
   border-bottom: 1px solid transparent;
   transition: all 0.25s ease;
 }
