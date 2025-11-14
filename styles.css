@@ -249,4 +249,12 @@ h3 { color: #00B8F0; }
     max-width: 350px;
     margin: 20px auto 35px;
   }
+  .resaltado {
+  color: #00aaff;              /* Color del texto */
+  font-size: 1.2rem;           /* Tamaño del texto */
+  text-decoration: underline;  /* Subrayado */
+  text-decoration-color: #00aaff;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
 }
