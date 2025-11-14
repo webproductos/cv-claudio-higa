@@ -132,7 +132,7 @@ body {
   width: 250px;
   height: 300px;
   border-radius: 1rem;
-  border: 3px solid #8a4dff;
+  border: 3px solid #E6BE8A; /* borde de imagen lila #8a4dff */
   object-fit: cover;
 }
 
